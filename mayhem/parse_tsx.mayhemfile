@@ -1,0 +1,6 @@
+project: tree-sitter-typescript
+target: parse-tsx
+cmds:
+    - cmd: /parse_tsx
+testsuite:
+    - file://examples

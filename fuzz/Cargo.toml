@@ -1,0 +1,30 @@
+[package]
+name = "tree-sitter-typescript-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+honggfuzz = "0.5.55"
+tree-sitter = "0.20"
+tree-sitter-typescript = "*"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "parse_tsx"
+path = "fuzz_targets/parse_tsx.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "parse_typescript"
+path = "fuzz_targets/parse_typescript.rs"
+test = false
+doc = false
